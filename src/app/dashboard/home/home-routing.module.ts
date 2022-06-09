@@ -10,7 +10,28 @@ const routes: Routes = [
   },
   {
     path: 'cropcultivation',
-    loadChildren: () => import('./cropcultivation/cropcultivation.module').then( m => m.CropcultivationPageModule)
+    children:[
+      {
+        path:'',
+        loadChildren: () => import('./cropcultivation/cropcultivation.module').then( m => m.CropcultivationPageModule)
+      },
+      {
+        path: 'fertilizer-calculator',
+        loadChildren: () => import('./cropcultivation/fertilizer-calculator/fertilizer-calculator.module').then( m => m.FertilizerCalculatorPageModule)
+      },
+      {
+        path: 'crop-tips',
+        loadChildren: () => import('./cropcultivation/crop-tips/crop-tips.module').then( m => m.CropTipsPageModule)
+      },
+      {
+        path: 'diseases',
+        loadChildren: () => import('./cropcultivation/diseases/diseases.module').then( m => m.DiseasesPageModule)
+      },
+      {
+        path: 'animal-intervention',
+        loadChildren: () => import('./cropcultivation/animal-intervention/animal-intervention.module').then( m => m.AnimalInterventionPageModule)
+      }
+    ]
   }
 ];
 
