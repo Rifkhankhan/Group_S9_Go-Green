@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'app-cropcultivation',
+  templateUrl: './cropcultivation.page.html',
+  styleUrls: ['./cropcultivation.page.scss'],
 })
-export class HomePage implements OnInit {
+export class CropcultivationPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private Router:ActivatedRoute) { }
   crops = [
     {
       'name':'Onion',
@@ -36,7 +36,17 @@ export class HomePage implements OnInit {
       'img':'assets/project_images/paddy.jpg'
     }
   ]
+  crop = {}
   ngOnInit() {
+
+    this.Router.paramMap.subscribe(paramMap=>{
+      if(!paramMap.has('cropId'))
+      {
+        return;
+      }
+
+      this.crop = this.crops.find(crop => crop.name === paramMap.get('cropId'));
+    });
   }
 
 }

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage
+  },
+  {
+    path: 'cropcultivation',
+    loadChildren: () => import('./cropcultivation/cropcultivation.module').then( m => m.CropcultivationPageModule)
   }
 ];
 
