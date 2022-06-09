@@ -1,6 +1,8 @@
 import { formatNumber } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthService,private route:Router) { }
 
   zones = [
     'jaffna',
@@ -25,12 +27,23 @@ export class RegisterPage implements OnInit {
   submittedForm(form:NgForm)
   {
     if(!form.valid)
-    {
+    {      
       return ;
     }
 
     console.log(form);
     
+    // this.authService.logup(
+    //   form.value.username,
+    //   form.value.yourname,
+    //   form.value.mobile,
+    //   form.value.nic,
+    //   form.value.address,
+    //   form.value.zone,
+    //   form.value.password,
+    // ).subscribe(()=>{
+    //   this.route.navigateByUrl('dashboard/tabs/home')
+    // });
 
   }
 

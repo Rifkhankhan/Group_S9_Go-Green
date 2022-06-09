@@ -1,15 +1,15 @@
 <ion-content >
-  <ion-menu side="start" contentId="main"  menuId="owner">
+  <ion-menu side="start" contentId="main"  menuId="owner" >
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar color="danger">
         <ion-title>
           Go Green
         </ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content>
-      <ion-list >
+    <ion-content >
+      <ion-list color="danger">
         <ion-menu-toggle>
           <ion-item lines="none" routerLink="/dashboard/tabs/home">
             <ion-icon name="home" slot="start"></ion-icon>
@@ -31,7 +31,7 @@
             <ion-label>Profile</ion-label>
           </ion-item>
 
-          <ion-item lines="none"  routerLink="login">
+          <ion-item lines="none"  routerLink="/login">
             <ion-icon name="home-outline" slot="start"></ion-icon>
             <ion-label>LogOut</ion-label>
           </ion-item>
