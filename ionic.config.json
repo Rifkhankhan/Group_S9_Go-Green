@@ -1,7 +1,0 @@
-{
-  "name": "codeswag-demo",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

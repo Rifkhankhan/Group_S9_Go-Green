@@ -29,11 +29,11 @@ router.post('/add', function(req, res, next) {
         firstname:req.body.firstname,
         lastname:req.body.lastname,
         email:req.body.email,
-        phonenumber:req.body.phonenumber,
-        dob:req.body.dob
+        password:req.body.password,
     });
 
 
+    console.log(newCustomerObj);
     newCustomerObj.save(function(err,newCustomerObj){
         if(err)
         {
